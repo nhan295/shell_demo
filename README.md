@@ -1,18 +1,56 @@
-# List all service in the AWS account
-## To execute code please following these steps:
-## Make sure that you already navigate to Downloads folder 
-**_Step 1_**: Go to git bash or PowerShell and type the command:
-    Navigate to Downloads folder then type the command:
-    ssh -i nhan_b2111940.pem ubuntu@13.213.68.147 ## file.pem is the key pair when create the ec2
-**_Step 2_**: Create file aws_resource_list.sh
-**_Step 3_**: Update by command
-    sudo apt install update
-**_Step 4_**: Install and configure aws cli
-    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-    unzip awscliv2.zip
-    sudo ./aws/install
-Configure aws cli by create new access key in AWS
-**_Step 5_**: Execute code to list all service in the account by command:
-   ex: ./aws_resource_list.sh <region> <service name>
-      ./aws_resource_list.sh ap-southeast-1 s3
-  
+
+# List All Services in the AWS Account
+
+## Steps to Execute Code  
+
+### Prerequisites  
+Make sure that you have navigated to the `Downloads` folder and have the required `.pem` file (key pair) for SSH.  
+
+### Instructions  
+
+**_Step 1_**: Access the EC2 instance  
+- Open Git Bash or PowerShell and type the following command to navigate to the `Downloads` folder and SSH into the EC2 instance:  
+  ```bash
+  ssh -i nhan_b2111940.pem ubuntu@13.213.68.147
+  ```
+
+**_Step 2_**: Create the script file  
+- Create a new file named `aws_resource_list.sh`.  
+
+**_Step 3_**: Update system packages  
+- Run the following command to update system packages:  
+  ```bash
+  sudo apt install update
+  ```
+
+**_Step 4_**: Install and configure AWS CLI  
+1. Download the AWS CLI installer:  
+   ```bash
+   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   ```
+2. Unzip the installer package:  
+   ```bash
+   unzip awscliv2.zip
+   ```
+3. Install the AWS CLI:  
+   ```bash
+   sudo ./aws/install
+   ```
+4. Configure the AWS CLI by creating a new access key in AWS Management Console and running:  
+   ```bash
+   aws configure
+   ```
+
+**_Step 5_**: Execute the script  
+- Run the script to list all services in the specified region and service name. Example:  
+  ```bash
+  ./aws_resource_list.sh <region> <service_name>
+  ```
+  Example usage:  
+  ```bash
+  ./aws_resource_list.sh ap-southeast-1 s3
+  ```
+
+### Notes  
+- Replace `<region>` with your desired AWS region (e.g., `ap-southeast-1`).  
+- Replace `<service_name>` with the AWS service name (e.g., `s3`).  
