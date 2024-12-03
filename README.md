@@ -8,8 +8,8 @@ Make sure that you have navigated to the `Downloads` folder and have the require
 
 ### Instructions  
 
-**_Step 1_**: Access the EC2 instance  
-- Open Git Bash or PowerShell and type the following command to navigate to the `Downloads` folder and SSH into the EC2 instance:  
+**_Step 1_**: Go to git bash or PowerShell and type the command:  
+- This command is used to remotely connect to an AWS EC2 (Elastic Compute Cloud) instance using the SSH (Secure Shell) protocol:  
   ```bash
   ssh -i nhan_b2111940.pem ubuntu@13.213.68.147
   ```
@@ -37,9 +37,6 @@ Make sure that you have navigated to the `Downloads` folder and have the require
    sudo ./aws/install
    ```
 4. Configure the AWS CLI by creating a new access key in AWS Management Console and running:  
-   ```bash
-   aws configure
-   ```
 
 **_Step 5_**: Execute the script  
 - Run the script to list all services in the specified region and service name. Example:  
